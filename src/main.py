@@ -1,8 +1,9 @@
 import water_level_sensor as wls
 import pump_controller as pump
 import notifications as ntf
+from aquaponics_gpio import initialize_GPIO
 
-
+initialize_GPIO()
 
 while True:
     if wls.fishes_tank.overflowing():
