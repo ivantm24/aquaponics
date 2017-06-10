@@ -1,0 +1,20 @@
+{# Load the tag library #}
+{% load bootstrap3 %}
+
+{# Load CSS and Javascript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# DIsplay django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+
+{% if latest_question_list %}
+<ul>
+{% for question in latest_question_list %}
+    <li><a href="/polls/{{ question.id }}/">{{question.question_text}}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<p> No Polls are available. </p>
+{% endif %}
