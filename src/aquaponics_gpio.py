@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 
 # Assign pins
 PUMP_SIGNAL_PIN = 3
-TEMPERATURE_PIN = 7
+TEMP_PIN = 7
 FISHES_TANK_PIN = 37
 PLANTS_TANK_LEFT_PIN = 33
 PLANTS_TANK_RIGHT_PIN = 35
@@ -15,25 +15,24 @@ def initialize_GPIO():
     try:
         GPIO.setup(PUMP_SIGNAL_PIN, GPIO.OUT)
     except NameError:
-        print
-        "Error defining: PUMP_SIGNAL_PIN"
+        print("Error defining: PUMP_SIGNAL_PIN")
     try:
-        GPIO.setup(TEMPERATURE_PIN, GPIO.IN)
+        GPIO.setup(TEMP_PIN, GPIO.IN)
     except NameError:
-        print "Error defining: TEMPERATURE_PIN"
+        print("Error defining: TEMPERATURE_PIN")
 
     try:
         GPIO.setup(FISHES_TANK_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     except NameError:
-        print "Error defining: FISHES_TANK_PIN"
+        print("Error defining: FISHES_TANK_PIN")
 
     try:
         GPIO.setup(PLANTS_TANK_LEFT_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     except NameError:
-        print "Error defining: PLANTS_TANK_LEFT_PIN"
+        print("Error defining: PLANTS_TANK_LEFT_PIN")
 
     try:
         GPIO.setup(PLANTS_TANK_RIGHT_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
     except NameError:
-        print "Error defining: PLANTS_TANK_RIGHT_PIN"
+        print("Error defining: PLANTS_TANK_RIGHT_PIN")
 
