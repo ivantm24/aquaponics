@@ -7,13 +7,13 @@ initialize_GPIO()
 
 while True:
     if wls.fishes_tank.overflowing():
-        pass
-    elif wls.fishes_tank.lacking_water():
-        pass
+        print("Fish tank overflowing")
 
-    if wls.plants_tank.overflowing():
-        if pump.is_on():
-            ntf.send("ALERT!!! - Aquaponics", "Plants ")
-        pump.turn_off()
-    elif wls.plants_tank.lacking_water():
-        pass
+    if wls.plants_left.overflowing():
+        print("Left plant tank overflowing")
+#        if pump.is_on():
+ #           ntf.send("ALERT!!! - Aquaponics", "Plants ")           NOTE:: uncomment when adding notifications
+ #       pump.turn_off()
+
+    if wls.plants_right.overflowing():
+        print("Right plant tank overflowing")
