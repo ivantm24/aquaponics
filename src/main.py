@@ -5,9 +5,18 @@ from aquaponics_gpio import initialize_GPIO
 
 initialize_GPIO()
 
+fish_tank_notification_sent = False
+plant_tank_notification_sent = False
+
 while True:
     if wls.fishes_tank.overflowing():
-        print("Fish tank overflowing")
+        if not fish_tank_notification_sent:
+            print("Fish tank overflowing")
+            fish_tank_notification_sent = True
+    else:
+        fish_tank_notification_sent = False
+        if fish_tank_notification_sent:
+            print("Fish tank is not longer overflowing")
 
     if wls.plants_left.overflowing():
         print("Left plant tank overflowing")
