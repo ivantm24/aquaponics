@@ -5,7 +5,7 @@ from RPi import GPIO
 
 from src import fish_feeder
 
-PUMP_SIGNAL_PIN = 3
+PUMP_SIGNAL_PIN = 15
 TEMP_PIN = 7
 FISHES_TANK_PIN = 37
 PLANTS_TANK_LEFT_PIN = 33
