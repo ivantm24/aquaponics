@@ -5,6 +5,7 @@ _is_on = True
 
 def initialize(frequency=50):
     global pwm
+    GPIO.setup(11, GPIO.OUT)
     pwm = GPIO.PWM(11, frequency)
 
 def is_on():
