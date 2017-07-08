@@ -21,7 +21,7 @@ def fishFeederController(request, duty_cycle=None):
         fish_feeder.turn_off()
     else:
         context['message'] = "It has been turn on"
-        fish_feeder.turn_on(50)
+        fish_feeder.feed()
 
     return render(request, 'aquaponics_app/fishFeederController.html', context)
 
