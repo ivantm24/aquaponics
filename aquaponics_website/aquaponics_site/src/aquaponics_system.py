@@ -29,7 +29,10 @@ def verify_send_alert(alert_method, activated_message, message_deactivate):
             print(message_deactivate)
         has_been_activated[alert_method] = False
 
+isRunning = False
 def main_loop():
+    global isRunning
+    isRunning = True
     while True:
         verify_send_alert(wls.fishes_tank.overflowing,"Fish tank overflowing","Fish tank is not longer overflowing")
 
@@ -42,4 +45,4 @@ def main_loop():
      #       pump.turn_off()
         verify_send_alert(wls.plants_right.overflowing, "Right plant tank overflowing",
                       "Right plant tank is not longer overflowing")
-
+    isRunning = False
