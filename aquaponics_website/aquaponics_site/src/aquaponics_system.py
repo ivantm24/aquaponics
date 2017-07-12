@@ -22,10 +22,13 @@ def verify_send_alert(alert_method, activated_message, message_deactivate):
         has_been_activated[alert_method] = False  #intialize flag for that method
     if alert_method():
         if not has_been_activated[alert_method]:
+            ntf.send("Alert - Water Level Sensor",activated_message)
+            pump.turn_on()
             print(activated_message)
             has_been_activated[alert_method] = True
     else:
         if has_been_activated[alert_method]:
+            ntf.send("Alert - Water Level Sensor", activated_message)
             print(message_deactivate)
         has_been_activated[alert_method] = False
 
