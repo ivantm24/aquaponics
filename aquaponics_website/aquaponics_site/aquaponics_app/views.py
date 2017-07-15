@@ -1,8 +1,10 @@
+import threading
+
 from django.http import JsonResponse
 from django.shortcuts import render
 
 # Create your views here.
-from src import aquaponics_gpio, fish_feeder, pump_controller
+from src import aquaponics_gpio, fish_feeder, pump_controller,aquaponics_system
 
 
 def index(request):
@@ -39,3 +41,17 @@ def pumpController(request, value=None):
         pump_controller.turn_on()
 
     return render(request, 'aquaponics_app/pumpController.html', context)
+
+def system(request, value=None):
+    context = {}
+    if value is None:
+        context['message'] = "Hello"
+    elif value == '1' and not aquaponics_system.isRunning:
+        t = threading.Thread(target=aquaponics_system.main_loop)
+        t.start()
+        context['message'] = "The system has been started"
+    elif value == '1' and aquaponics_system.isRunning:
+        context['message'] = "The system was running"
+    elif value == '0':
+        context['message'] = "Turning off the system hasnt been implemented"
+    return render(request, 'aquaponics_app/systemController.html', context)

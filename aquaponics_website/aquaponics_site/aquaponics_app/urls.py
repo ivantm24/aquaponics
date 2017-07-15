@@ -13,5 +13,9 @@ urlpatterns = [
     url(r'^pump/$', views.pumpController),
     # ex: /feeder/2
     url(r'^pump/(?P<value>[0-9]+)$', views.pumpController, name='pump'),
-    
+
+    url(r'^system/$', views.system),
+    # ex: /feeder/2
+    url(r'^system/(?P<value>[0-9]+)$', views.system, name='system'),
+
 ]
