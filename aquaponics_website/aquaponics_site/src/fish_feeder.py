@@ -31,6 +31,7 @@ def _feed_sync(duty_cycle, duration):
 def turn_on(duty_cycle=None):
     global pwm, _is_on
     _is_on = True
+    initialize()
     pwm.start(duty_cycle)
 
 
