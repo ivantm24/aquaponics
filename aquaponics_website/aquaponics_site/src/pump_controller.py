@@ -10,9 +10,9 @@ def is_on():
 
 def turn_on():
     _is_on = True
-    GPIO.output(agpio.PUMP_SIGNAL_PIN, True)
+    GPIO.output(agpio.PUMP_SIGNAL_PIN, False)
 
 
 def turn_off():
     _is_on = False
-    GPIO.output(agpio.PUMP_SIGNAL_PIN, False)
+    GPIO.output(agpio.PUMP_SIGNAL_PIN, True)
