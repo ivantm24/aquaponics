@@ -1,4 +1,9 @@
-from . import fish_feeder
+#from . import fish_feeder
+#cannot use relative import on main module
+try:
+    import fish_feeder
+except:
+    from aquaponics_website.aquaponics_site.src import fish_feeder
 
 from time import gmtime, strftime
 import os

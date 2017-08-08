@@ -2,7 +2,7 @@
 try:
     import RPi.GPIO as GPIO
 except:
-    from ..RPi import GPIO
+    from aquaponics_website.aquaponics_site.RPi import GPIO
 import _thread as thread
 import time
 
