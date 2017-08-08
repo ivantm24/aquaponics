@@ -1,4 +1,8 @@
-from aquaponics_website.aquaponics_site.src import fish_feeder
+try:
+    import fish_feeder
+except:
+    from aquaponics_website.aquaponics_site.src import fish_feeder
+
 from time import gmtime, strftime
 import os
 
