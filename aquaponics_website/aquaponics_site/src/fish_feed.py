@@ -19,4 +19,4 @@ else:
 with open(filename, append_write) as f:
     f.write("Fish Feeder was activated at " + strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime()) +"\n")
 
-#fish_feeder.turn_on()
+fish_feeder.turn_on()
