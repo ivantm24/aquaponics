@@ -1,5 +1,8 @@
 #import src.aquaponics_gpio as agpio
-import RPi.GPIO as GPIO
+try:
+    import RPi.GPIO as GPIO
+except:
+    from aquaponics_website.aquaponics_site.RPi import GPIO
 import _thread as thread
 import time
 
