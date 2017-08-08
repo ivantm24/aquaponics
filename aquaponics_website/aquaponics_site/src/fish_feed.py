@@ -18,8 +18,8 @@ if os.path.exists(filename):
 else:
     append_write = 'w' # make a new file if not
 
-fish_feeder.initialize()
-fish_feeder.feed()
+#fish_feeder.initialize()
+fish_feeder.feed(duration=2)
 
 with open(filename, append_write) as f:
     f.write("Fish Feeder was activated at " + strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime()) +"\n")
