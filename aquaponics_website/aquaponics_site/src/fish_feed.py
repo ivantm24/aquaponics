@@ -17,4 +17,6 @@ else:
     append_write = 'w' # make a new file if not
 
 with open(filename, append_write) as f:
-    f.write("Ran at " + strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime()) +"\n")
+    f.write("Fish Feeder was activated at " + strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime()) +"\n")
+
+#fish_feeder.turn_on()
