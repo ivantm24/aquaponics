@@ -6,7 +6,10 @@ except:
 from time import gmtime, strftime
 import os
 
-filename = "/Users/ivantactukmercado/Desktop/aquaponics_log.txt"
+path = "/home/pi/Desktop/"
+if not os.path.exists(path):
+    path = "/Users/ivantactukmercado/Desktop/"
+filename = path+ "aquaponics_log.txt"
 
 if os.path.exists(filename):
     append_write = 'a' # append if already exists
