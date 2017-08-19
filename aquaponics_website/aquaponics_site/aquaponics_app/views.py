@@ -6,10 +6,15 @@ from django.shortcuts import render
 # Create your views here.
 from src import aquaponics_gpio, fish_feeder, pump_controller,aquaponics_system
 
+from src import fetch_temperature
 
 def index(request):
     print(aquaponics_gpio.GPIO_MODE)
     context = {}
+    samples = fetch_temperature.get_samples()
+    context['samples'] =[]
+    for s in samples:
+        context['samples'].append({'y': float(s.value), 'x': s.get_time()})
     return render(request, 'aquaponics_app/index.html', context)
 
 def fishFeederController(request, duty_cycle=None):
