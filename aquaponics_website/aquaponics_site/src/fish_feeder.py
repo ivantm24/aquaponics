@@ -20,7 +20,7 @@ def initialize(frequency=50):
 def is_on():
     return _is_on
 
-def feed(duty_cycle=5, duration=1):
+def feed(duty_cycle=5, duration=0.5):
     '''
     activates fish feeder and then turns it off
     :param duty_cycle: controls the speed of the motor
